@@ -123,7 +123,7 @@ const Home=({headers,testimonials,products,about,contact,blogs})=>{
     {/* single home slider */}
 
     {headers.map((header,index)=>(
-      <div className={`single-homepage-slider homepage-bg-${index+1}`}>
+      <div key={header.id} className={`single-homepage-slider homepage-bg-${index+1}`}>
       <div className="container">
         <div className="row">
           <div className="col-md-12 col-lg-7 offset-lg-1 offset-xl-0">
@@ -213,7 +213,7 @@ const Home=({headers,testimonials,products,about,contact,blogs})=>{
       <div className="row">
 
         {products.map((product)=>(
-         <div className="col-lg-4 col-md-6 text-center">
+         <div key={product.id} className="col-lg-4 col-md-6 text-center">
          <div className="single-product-item">
            <div className="product-image">
              <a href="single-product.html">
@@ -307,7 +307,7 @@ const Home=({headers,testimonials,products,about,contact,blogs})=>{
         <div className="col-lg-10 offset-lg-1 text-center">
           <div className="testimonial-sliders">
           {testimonials.map((testimonail)=>(
-            <div className="single-testimonial-slider">
+            <div key={testimonail.id} className="single-testimonial-slider">
               <div className="client-avater">
                 <img src={testimonail.image} alt="" />
               </div>
@@ -406,7 +406,7 @@ const Home=({headers,testimonials,products,about,contact,blogs})=>{
       </div>
       <div className="row">
       {blogs.map((blog)=>(
-        <div className="col-lg-4 col-md-6">
+        <div key={blog.id} className="col-lg-4 col-md-6">
           <div className="single-latest-news">
             <a href="single-news.html">
             <div className="latest-news-bg" style={{backgroundImage: `url(${blog.image})`}} />
