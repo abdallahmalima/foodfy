@@ -21,29 +21,234 @@ export const getBlogs = async () => {
 
 function Blog({blogs}) {
     return (
-        <>
-        {/* Page Header Start */}
-        <div
-          className="container-fluid page-header py-5 mb-5 wow fadeIn"
-          data-wow-delay="0.1s"
-        >
-          <div className="container text-center py-5">
-            <h1 className="display-2 text-dark mb-4 animated slideInDown">Blogs</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-              <ol className="breadcrumb justify-content-center mb-0">
-              <li className="breadcrumb-item">
-                  <Link href="/">Home</Link>
-                </li>
-                <li className="breadcrumb-item text-dark" aria-current="page">
-                  Blog
-                </li>
-              </ol>
-            </nav>
+      <>
+      {/* breadcrumb-section */}
+      <div className="breadcrumb-section breadcrumb-bg">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 offset-lg-2 text-center">
+              <div className="breadcrumb-text">
+                <p>Organic Information</p>
+                <h1>News Article</h1>
+              </div>
+            </div>
           </div>
         </div>
-        {/* Page Header End */}
-        <BlogComp blogs={blogs}/>
-      </>
+      </div>
+      {/* end breadcrumb section */}
+      {/* latest news */}
+      <div className="latest-news mt-150 mb-150">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-4 col-md-6">
+              <div className="single-latest-news">
+                <a href="single-news.html">
+                  <div className="latest-news-bg news-bg-1" />
+                </a>
+                <div className="news-text-box">
+                  <h3>
+                    <a href="single-news.html">
+                      You will vainly look for fruit on it in autumn.
+                    </a>
+                  </h3>
+                  <p className="blog-meta">
+                    <span className="author">
+                      <i className="fas fa-user" /> Admin
+                    </span>
+                    <span className="date">
+                      <i className="fas fa-calendar" /> 27 December, 2019
+                    </span>
+                  </p>
+                  <p className="excerpt">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Voluptatibus laborum autem, dolores inventore, beatae nam.
+                  </p>
+                  <a href="single-news.html" className="read-more-btn">
+                    read more <i className="fas fa-angle-right" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-6">
+              <div className="single-latest-news">
+                <a href="single-news.html">
+                  <div className="latest-news-bg news-bg-2" />
+                </a>
+                <div className="news-text-box">
+                  <h3>
+                    <a href="single-news.html">
+                      A man's worth has its season, like tomato.
+                    </a>
+                  </h3>
+                  <p className="blog-meta">
+                    <span className="author">
+                      <i className="fas fa-user" /> Admin
+                    </span>
+                    <span className="date">
+                      <i className="fas fa-calendar" /> 27 December, 2019
+                    </span>
+                  </p>
+                  <p className="excerpt">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Voluptatibus laborum autem, dolores inventore, beatae nam.
+                  </p>
+                  <a href="single-news.html" className="read-more-btn">
+                    read more <i className="fas fa-angle-right" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-6">
+              <div className="single-latest-news">
+                <a href="single-news.html">
+                  <div className="latest-news-bg news-bg-3" />
+                </a>
+                <div className="news-text-box">
+                  <h3>
+                    <a href="single-news.html">
+                      Good thoughts bear good fresh juicy fruit.
+                    </a>
+                  </h3>
+                  <p className="blog-meta">
+                    <span className="author">
+                      <i className="fas fa-user" /> Admin
+                    </span>
+                    <span className="date">
+                      <i className="fas fa-calendar" /> 27 December, 2019
+                    </span>
+                  </p>
+                  <p className="excerpt">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Voluptatibus laborum autem, dolores inventore, beatae nam.
+                  </p>
+                  <a href="single-news.html" className="read-more-btn">
+                    read more <i className="fas fa-angle-right" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-6">
+              <div className="single-latest-news">
+                <a href="single-news.html">
+                  <div className="latest-news-bg news-bg-4" />
+                </a>
+                <div className="news-text-box">
+                  <h3>
+                    <a href="single-news.html">
+                      Fall in love with the fresh orange
+                    </a>
+                  </h3>
+                  <p className="blog-meta">
+                    <span className="author">
+                      <i className="fas fa-user" /> Admin
+                    </span>
+                    <span className="date">
+                      <i className="fas fa-calendar" /> 27 December, 2019
+                    </span>
+                  </p>
+                  <p className="excerpt">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Voluptatibus laborum autem, dolores inventore, beatae nam.
+                  </p>
+                  <a href="single-news.html" className="read-more-btn">
+                    read more <i className="fas fa-angle-right" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-6">
+              <div className="single-latest-news">
+                <a href="single-news.html">
+                  <div className="latest-news-bg news-bg-5" />
+                </a>
+                <div className="news-text-box">
+                  <h3>
+                    <a href="single-news.html">
+                      Why the berries always look delecious
+                    </a>
+                  </h3>
+                  <p className="blog-meta">
+                    <span className="author">
+                      <i className="fas fa-user" /> Admin
+                    </span>
+                    <span className="date">
+                      <i className="fas fa-calendar" /> 27 December, 2019
+                    </span>
+                  </p>
+                  <p className="excerpt">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Voluptatibus laborum autem, dolores inventore, beatae nam.
+                  </p>
+                  <a href="single-news.html" className="read-more-btn">
+                    read more <i className="fas fa-angle-right" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-md-6">
+              <div className="single-latest-news">
+                <a href="single-news.html">
+                  <div className="latest-news-bg news-bg-6" />
+                </a>
+                <div className="news-text-box">
+                  <h3>
+                    <a href="single-news.html">
+                      Love for fruits are genuine of John Doe
+                    </a>
+                  </h3>
+                  <p className="blog-meta">
+                    <span className="author">
+                      <i className="fas fa-user" /> Admin
+                    </span>
+                    <span className="date">
+                      <i className="fas fa-calendar" /> 27 December, 2018
+                    </span>
+                  </p>
+                  <p className="excerpt">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Voluptatibus laborum autem, dolores inventore, beatae nam.
+                  </p>
+                  <a href="single-news.html" className="read-more-btn">
+                    read more <i className="fas fa-angle-right" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-12 text-center">
+                  <div className="pagination-wrap">
+                    <ul>
+                      <li>
+                        <a href="#">Prev</a>
+                      </li>
+                      <li>
+                        <a href="#">1</a>
+                      </li>
+                      <li>
+                        <a className="active" href="#">
+                          2
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">3</a>
+                      </li>
+                      <li>
+                        <a href="#">Next</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* end latest news */}
+    </>
+    
        
     );
 }

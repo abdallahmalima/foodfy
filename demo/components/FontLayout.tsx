@@ -4,6 +4,8 @@ import { usePathname } from 'next/navigation'
 import Image from "next/image";
 import { collection, limit, onSnapshot, query } from "firebase/firestore";
 import { FIRESTORE_DB } from "../../firebase.config";
+import Head from "next/head";
+import Script from "next/script";
 
 const FontLayout=function getLayout(page:any) {
     const pathname=usePathname()
@@ -62,208 +64,251 @@ const FontLayout=function getLayout(page:any) {
     
 
     return (
-        <React.Fragment>
-           <meta charSet="utf-8" />
-  <title>Moonlight herbal</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <meta content="" name="keywords" />
-  <meta content="" name="description" />
-  {/* Favicon */}
-  <link href="/img/favicon.ico" rel="icon" />
-  {/* Google Web Fonts */}
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700;900&display=swap"
-    rel="stylesheet"
+      <>
+      <Head>
+
+  <meta charSet="UTF-8" />
+  <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/"
   />
-  {/* Icon Font Stylesheet */}
+  {/* title */}p<title>Fruitkha</title>
+  {/* favicon */}
+  <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png" />
+  {/* google font */}
   <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
     rel="stylesheet"
   />
   <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap"
     rel="stylesheet"
   />
-  {/* Libraries Stylesheet */}
-  <link href="/lib/animate/animate.min.css" rel="stylesheet" />
-  <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-  {/* Customized Bootstrap Stylesheet */}
-  <link href="/css/bootstrap.min.css" rel="stylesheet" />
-  {/* Template Stylesheet */}
-  <link href="/css/style.css" rel="stylesheet" />
-  {/* Navbar Start */}
-  <div className="container-fluid bg-white sticky-top">
+  {/* fontawesome */}
+  <link rel="stylesheet" href="/assets/css/all.min.css" />
+  {/* bootstrap */}
+  <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" />
+  {/* owl carousel */}
+  <link rel="stylesheet" href="/assets/css/owl.carousel.css" />
+  {/* magnific popup */}
+  <link rel="stylesheet" href="/assets/css/magnific-popup.css" />
+  {/* animate css */}
+  <link rel="stylesheet" href="/assets/css/animate.css" />
+  {/* mean menu css */}
+  <link rel="stylesheet" href="/assets/css/meanmenu.min.css" />
+  {/* main style */}
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  {/* responsive */}
+  <link rel="stylesheet" href="/assets/css/responsive.css" />
+
+
+
+      </Head>
+
+  {/* header */}
+  <div className="top-header-area" id="sticker">
     <div className="container">
-      <nav className="navbar navbar-expand-lg bg-white navbar-light py-2 py-lg-0">
-        <a href="index.html" className="navbar-brand">
-          <Image
-            src="/img/logo.png"
-            width={0}
-            height={0}
-            sizes="100vw"
-            style={{ width: '100%', height: 'auto' }} // optional
-            alt="Logo"
-            className="img-fluid"
-            />
-        </a>
-        <button
-          type="button"
-          className="navbar-toggler ms-auto me-0"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarCollapse">
-          <div className="navbar-nav ms-auto">
-            <Link href="/" className={`nav-item nav-link ${pathname==='/'&&'active'}`}>Home</Link>
-            <Link href="/products" className={`nav-item nav-link ${pathname==='/products' && 'active'}`}> Products</Link>
-            <Link href="/blog" className={`nav-item nav-link ${pathname==='/blog' && 'active'}`}> Blog</Link>
-            <Link href="/about" className={`nav-item nav-link ${pathname==='/about' && 'active'}`}>About</Link>
-            <Link href="/contact" className={`nav-item nav-link ${pathname==='/contact' && 'active'}`}> Contact</Link>
-          </div>
-
-        </div>
-      </nav>
-    </div>
-  </div>
-  {/* Navbar End */}
- 
-            {page}
-
-            {/* Footer Start */}
-  <div
-    className="container-fluid bg-dark footer mt-5 py-5 wow fadeIn"
-    data-wow-delay="0.1s"
-  >
-    <div className="container py-5">
-      <div className="row g-5">
-        <div className="col-lg-3 col-md-6">
-          <h4 className="text-primary mb-4">Our Office</h4>
-          <p className="mb-2">
-            <i className="fa fa-map-marker-alt text-primary me-3" />
-            {contact.street},  {contact.region}
-          </p>
-          <p className="mb-2">
-            <i className="fa fa-phone-alt text-primary me-3" />
-            {contact.contact1}
-          </p>
-          <p className="mb-2">
-            <i className="fa fa-envelope text-primary me-3" />
-            {contact.email1}
-          </p>
-          <div className="d-flex pt-3">
-            {social.instagram &&
-             <a
-             className="btn btn-square btn-primary rounded-circle me-2"
-             href=""
-           >
-             <i className="fab fa-instagram" />
-           </a>
-            }
-
-              {social.facebook &&
-              <a
-              className="btn btn-square btn-primary rounded-circle me-2"
-              href=""
-            >
-              <i className="fab fa-facebook-f" />
-            </a>
-            }
-
-          {social.youtube &&
-              <a
-              className="btn btn-square btn-primary rounded-circle me-2"
-              href=""
-            >
-             <i className="fab fa-youtube" />
-            </a>
-            }
-
-          {social.whatsapp &&
-              <a
-              className="btn btn-square btn-primary rounded-circle me-2"
-              href=""
-            >
-             <i className="fab fa-whatsapp" />
-            </a>
-            }
-          
-          </div>
-        </div>
-        <div className="col-lg-3 col-md-6">
-          <h4 className="text-primary mb-4">Quick Links</h4>
-          <Link href="/about" className="btn btn-link"> About Us</Link>
-          <Link href="/contact" className="btn btn-link">  Contact Us</Link>
-          <Link href="/blog" className="btn btn-link">  Blog</Link>
-          <Link href="/products" className="btn btn-link">   Products</Link>
-          <Link href="/" className="btn btn-link">   Home</Link>
-        </div>
-        <div className="col-lg-3 col-md-6">
-          <h4 className="text-primary mb-4">Business Hours</h4>
-          <p className="mb-1">Monday - Friday</p>
-          <h6 className="text-light">09:00 am - 07:00 pm</h6>
-          <p className="mb-1">Saturday</p>
-          <h6 className="text-light">09:00 am - 12:00 pm</h6>
-          <p className="mb-1">Sunday</p>
-          <h6 className="text-light">Closed</h6>
-        </div>
-        <div className="col-lg-3 col-md-6">
-          <h4 className="text-primary mb-4">Newsletter</h4>
-          <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-          <div className="position-relative w-100">
-            <input
-              className="form-control bg-transparent w-100 py-3 ps-4 pe-5"
-              type="text"
-              placeholder="Your email"
-            />
-            <button
-              type="button"
-              className="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"
-            >
-              SignUp
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  {/* Footer End */}
-  {/* Copyright Start */}
-  <div className="container-fluid copyright py-4">
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
-          ©{" "}
-          <a className="fw-medium" href="#">
-            www.moonlightherbal.com
-          </a>
-          , All Right Reserved.
-        </div>
+      <div className="row">
+        <div className="col-lg-12 col-sm-12 text-center">
+          <div className="main-menu-wrap">
+            {/* logo */}
+            <div className="site-logo">
+              <a href="index.html">
+                <img src="assets/img/logo.png" alt="" />
+              </a>
+            </div>
+            {/* logo */}
+            {/* menu start */}
+            <nav className="main-menu">
+              <ul>
+                <li className="current-list-item">
+                  <Link href="/">Home</Link>
+                </li>
+                <li>
+                  <Link href="/about">About</Link>
+                </li>
       
+                <li>
+                <Link href="/blog">Blog</Link>
+                </li>
+                <li>
+                  <Link href="/contact">Contact</Link>
+                </li>
+                <li>
+                  <Link href="/products">Product</Link>
+                </li>
+                <li>
+                  <div className="header-icons">
+                  <Link href="/cart" className="shopping-cart">
+                     <i className="fas fa-shopping-cart" />
+                  </Link>
+
+                    <a className="mobile-hide search-bar-icon" href="#">
+                      <i className="fas fa-search" />
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+            <a className="mobile-show search-bar-icon" href="#">
+              <i className="fas fa-search" />
+            </a>
+            <div className="mobile-menu" />
+            {/* menu end */}
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  {/* Copyright End */}
-  {/* Back to Top */}
-  <a
-    href="#"
-    className="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"
-  >
-    <i className="bi bi-arrow-up" />
-  </a>
-  {/* JavaScript Libraries */}
-  {/* Template Javascript */}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/lib/wow/wow.min.js"></script>
-    <script src="/lib/easing/easing.min.js"></script>
-    <script src="/lib/waypoints/waypoints.min.js"></script>
-    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="/js/main.js"></script>
-        </React.Fragment>
+  {/* end header */}
+  {/* search area */}
+  <div className="search-area">
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-12">
+          <span className="close-btn">
+            <i className="fas fa-window-close" />
+          </span>
+          <div className="search-bar">
+            <div className="search-bar-tablecell">
+              <h3>Search For:</h3>
+              <input type="text" placeholder="Keywords" />
+              <button type="submit">
+                Search <i className="fas fa-search" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   
+  {/* end search area */}
+   {page}
+  {/* footer */}
+  <div className="footer-area">
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-3 col-md-6">
+          <div className="footer-box about-widget">
+            <h2 className="widget-title">About us</h2>
+            <p>
+              Ut enim ad minim veniam perspiciatis unde omnis iste natus error
+              sit voluptatem accusantium doloremque laudantium, totam rem
+              aperiam, eaque ipsa quae.
+            </p>
+          </div>
+        </div>
+        <div className="col-lg-3 col-md-6">
+          <div className="footer-box get-in-touch">
+            <h2 className="widget-title">Get in Touch</h2>
+            <ul>
+              <li>34/8, East Hukupara, Gifirtok, Sadan.</li>
+              <li>support@fruitkha.com</li>
+              <li>+00 111 222 3333</li>
+            </ul>
+          </div>
+        </div>
+        <div className="col-lg-3 col-md-6">
+          <div className="footer-box pages">
+            <h2 className="widget-title">Pages</h2>
+            <ul>
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="about.html">About</a>
+              </li>
+              <li>
+                <a href="services.html">Shop</a>
+              </li>
+              <li>
+                <a href="news.html">News</a>
+              </li>
+              <li>
+                <a href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="col-lg-3 col-md-6">
+          <div className="footer-box subscribe">
+            <h2 className="widget-title">Subscribe</h2>
+            <p>Subscribe to our mailing list to get the latest updates.</p>
+            <form action="index.html">
+              <input type="email" placeholder="Email" />
+              <button type="submit">
+                <i className="fas fa-paper-plane" />
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {/* end footer */}
+  {/* copyright */}
+  <div className="copyright">
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-6 col-md-12">
+          <p>
+            Copyrights © 2019 -{" "}
+            <a href="https://imransdesign.com/">Imran Hossain</a>, All Rights
+            Reserved.
+            <br />
+            Distributed By - <a href="https://themewagon.com/">Themewagon</a>
+          </p>
+        </div>
+        <div className="col-lg-6 text-right col-md-12">
+          <div className="social-icons">
+            <ul>
+              <li>
+                <a href="#" target="_blank">
+                  <i className="fab fa-facebook-f" />
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <i className="fab fa-twitter" />
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <i className="fab fa-instagram" />
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <i className="fab fa-linkedin" />
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <i className="fab fa-dribbble" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<Script src="/assets/js/jquery-1.11.3.min.js"/>
+<Script src="/assets/bootstrap/js/bootstrap.min.js" />
+<Script src="/assets/js/jquery.countdown.js"/>
+<Script src="/assets/js/jquery.isotope-3.0.6.min.js"/>
+<Script src="/assets/js/waypoints.js"/>
+<Script src="/assets/js/jquery.magnific-popup.min.js"/>
+<Script src="/assets/js/jquery.meanmenu.min.js"/>
+<Script src="/assets/js/owl.carousel.min.js"/>
+<Script src="/assets/js/sticker.js"/>
+<Script src="/assets/js/main.js"/>
+</>
+
     );
   };
 

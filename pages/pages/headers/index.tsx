@@ -160,6 +160,8 @@ const Product = () => {
               }, 
               (error) => {
                 // Handle unsuccessful uploads
+                console.log(error.message)
+                console.log(FIREBASE_AUTH.currentUser)
               }, 
               () => {
                 getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {

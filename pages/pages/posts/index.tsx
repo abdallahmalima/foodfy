@@ -23,6 +23,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { Skeleton } from 'primereact/skeleton';
 import revalidate from '../../../lib/revalidate';
+import { truncateStringToWords } from '../../../lib/utils';
 
 
 const Product = () => {
@@ -314,16 +315,6 @@ const Product = () => {
         );
     };
 
-    function truncateStringToWords(str, numWords) {
-        const words = str.split(' ');
-    
-        if (words.length <= numWords) {
-            return str;
-        } else {
-            const truncatedWords = words.slice(0, numWords);
-            return truncatedWords.join(' ') + '...';
-        }
-    }
 
     const descriptionBodyTemplate = (rowData: Demo.Post) => {
         return (
